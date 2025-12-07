@@ -41,6 +41,6 @@
       "id": "@extension-without-data-collection",
       "data_collection_permissions": {
         "required": ["none"]
-      }
+      },
 
 }
