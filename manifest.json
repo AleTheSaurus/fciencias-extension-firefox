@@ -36,3 +36,10 @@
     "default_icon": "./logos/logofciencias48.png"
   }
 }
+
+"browser_specific_settings": {
+    "gecko": {
+      "id": "@extension-without-data-collection",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
