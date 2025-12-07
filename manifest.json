@@ -34,8 +34,7 @@
   
   "browser_action": {
     "default_icon": "./logos/logofciencias48.png"
-  }
-}
+  },
 
 "browser_specific_settings": {
     "gecko": {
@@ -43,3 +42,5 @@
       "data_collection_permissions": {
         "required": ["none"]
       }
+
+}
