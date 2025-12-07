@@ -1,16 +1,16 @@
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === 'loading') {
     if (
       /https?:\/\/w(w|e)(w|b)\.fciencias\.unam\.mx\/docencia\/horarios\/202[0-9][0-9]/.test(
         changeInfo.url
       )
     ) {
-      chrome.tabs.executeScript(null, { file: './foreground.js' });
+      browser.tabs.executeScript(null, { file: './foreground.js' });
     }
   }
 });
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log(sender);
   firstNames = [];
   lastNames = [];
@@ -140,8 +140,8 @@ function fetchProfessorsInfo(firstNames, lastNames, tabid) {
         }
       }
       console.log(profInfo);
-      chrome.tabs.sendMessage(tabid, { professors: profInfo });
-      chrome.tabs.insertCSS(null, { file: './styles.css' });
+      browser.tabs.sendMessage(tabid, { professors: profInfo });
+      browser.tabs.insertCSS(null, { file: './styles.css' });
     })
     .catch(function (response) {
       // "Not Found"
